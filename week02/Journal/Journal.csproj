@@ -9,3 +9,36 @@
   </PropertyGroup>
 
 </Project>
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
+
+public class Journal
+{
+    private List<Entry> entries = new List<Entry>();
+
+    public void AddEntry(Entry e)
+    {
+        entries.Add(e);
+    }
+
+    public void DisplayEntries()
+    {
+        if (entries.Count == 0)
+        {
+            Console.WriteLine("Your journal is empty.");
+            return;
+        }
+        foreach (var e in entries)
+        {
+            Console.WriteLine($"Date: {e.Date}");
+            Console.WriteLine($"Prompt: {e.Prompt}");
+            Console.WriteLine($"Response: {e.Response}");
+            Console.WriteLine($"Mood: {e.Mood}");
+            Console.WriteLine(new string('-', 40));
+        }
+    }
+
+    public void SaveTo
+}
